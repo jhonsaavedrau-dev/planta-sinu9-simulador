@@ -1,0 +1,4205 @@
+{
+ "meta": {
+  "titulo": "Planta de compresión y tratamiento de gas natural SINÚ 9",
+  "unidades": "metros",
+  "nota": "Disposición aproximada: no se tiene el plot plan. Equipos modelados con los planos Valerus, Construmont/PBI y el P&ID; los marcados ESTIMADO son aproximados.",
+  "gas": "98 % metano · 2 % etano+ · ≈10 MMSCFD · 450–500 psig · 95–97 °F (Alex)"
+ },
+ "systems": [
+  {
+   "id": "entrada",
+   "name": "Entrada y separación"
+  },
+  {
+   "id": "deshidratacion",
+   "name": "Deshidratación TEG"
+  },
+  {
+   "id": "dewpoint",
+   "name": "Control de dew point"
+  },
+  {
+   "id": "compresion",
+   "name": "Compresión y venta"
+  },
+  {
+   "id": "combustible",
+   "name": "Gas combustible"
+  },
+  {
+   "id": "servicios",
+   "name": "Servicios (aire, energía)"
+  },
+  {
+   "id": "alivio",
+   "name": "Alivio, tea y condensados"
+  }
+ ],
+ "streams": {
+  "humedo": {
+   "name": "Gas húmedo (de pozos)",
+   "color": "#d1453b"
+  },
+  "seco": {
+   "name": "Gas deshidratado",
+   "color": "#e8892b"
+  },
+  "frio": {
+   "name": "Gas frío / tratado",
+   "color": "#2f7fd1"
+  },
+  "venta": {
+   "name": "Gas comprimido a venta",
+   "color": "#2fa35a"
+  },
+  "comb": {
+   "name": "Gas combustible",
+   "color": "#27b5c9"
+  },
+  "teg_pobre": {
+   "name": "Glicol pobre (TEG)",
+   "color": "#b34fd1"
+  },
+  "teg_rico": {
+   "name": "Glicol rico",
+   "color": "#7d3aa0"
+  },
+  "agua": {
+   "name": "Agua-monoetilenglicol",
+   "color": "#65b9ff"
+  },
+  "cond": {
+   "name": "Condensados y drenajes",
+   "color": "#8a6a2c"
+  },
+  "tea": {
+   "name": "Alivio a tea",
+   "color": "#ff5fa2"
+  },
+  "aire": {
+   "name": "Aire de instrumentos",
+   "color": "#c9ced3"
+  }
+ },
+ "equipment": [
+  {
+   "tag": "V-101",
+   "name": "Separador de entrada",
+   "system": "entrada",
+   "info": {
+    "Función": "Separa los líquidos (agua y condensado) que llegan con el gas de los pozos Brujo X1 y Mágico X1.",
+    "Tipo": "Bifásico vertical",
+    "Capacidad": "15.000 kpcd · máx. 1.100 psi · 0–150 °F (manual)",
+    "Operación": "Entrada 450–500 psig · 95–97 °F (Alex)",
+    "Dimensiones": "Ø 36 in × 10 ft — ESTIMADAS (faltan en el plano -002)",
+    "Plano": "EDS-PR-PL-2505-002-1/1",
+    "TAG mantenimiento": "PS9-V601 (scrubber inlet planta)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      4,
+      2.324,
+      -6
+     ],
+     "r": 0.4572,
+     "h": 3.048,
+     "axis": "y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      4,
+      3.848,
+      -6
+     ],
+     "r": 0.4572,
+     "k": 0.5,
+     "axis": "+y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      4,
+      0.8,
+      -6
+     ],
+     "r": 0.4572,
+     "k": 0.5,
+     "axis": "-y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      4,
+      0.2857,
+      -6
+     ],
+     "r": 0.41148,
+     "h": 0.5714,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      4,
+      0.1,
+      -6
+     ],
+     "r": 0.5715,
+     "h": 0.2,
+     "axis": "y",
+     "c": "#b9b4aa"
+    }
+   ],
+   "focus": [
+    4,
+    2.5,
+    -6
+   ]
+  },
+  {
+   "tag": "FTIQ-101",
+   "name": "Medición de gas de entrada",
+   "system": "entrada",
+   "info": {
+    "Función": "Mide el gas que entra a la planta (AGA-3).",
+    "Equipo": "Porta platinas Daniel Senior 4\" ANSI 600 + computador Scanner 2000 (Cameron)",
+    "TAG mantenimiento": "PS9-FTIQ101 (medidor GN inlet)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      8.5,
+      1.0,
+      -6
+     ],
+     "r": 0.1016,
+     "h": 4.0,
+     "axis": "x",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "box",
+     "p": [
+      8.5,
+      1.45,
+      -6
+     ],
+     "s": [
+      0.35,
+      0.35,
+      0.45
+     ],
+     "c": "#e0b52e"
+    },
+    {
+     "t": "box",
+     "p": [
+      9.6,
+      0.5,
+      -5.6
+     ],
+     "s": [
+      0.25,
+      1.0,
+      0.25
+     ],
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    8.5,
+    1,
+    -6
+   ]
+  },
+  {
+   "tag": "TC-201",
+   "name": "Torre contactora de glicol 1",
+   "system": "deshidratacion",
+   "info": {
+    "Función": "El gas sube y el glicol (TEG) baja por los platos; el glicol atrapa el agua del gas.",
+    "Tipo": "De platos",
+    "Capacidad": "8 MMSCFD (Alex) · 15 MMSCFD @1200 psig (P&ID)",
+    "Estado": "En espera",
+    "Dimensiones": "Ø 24 in × 300 in entre costuras (plano Valerus)",
+    "Clase": "ANSI 600#",
+    "Operación": "Las dos torres están en paralelo; se puede pasar el gas por una sola (Alex).",
+    "Plano": "EDS-PR-PL-2505-003-1/2",
+    "Fabricante": "Valerus · absorbedor/scrubber · 8 platos de burbujeo",
+    "Diseño": "1440 psig @ 120 °F · prueba hidrostática 1872 psig",
+    "Peso": "7.715 lb vacía · 12.013 lb llena de agua",
+    "TAG mantenimiento": "PS9-TC201"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      14.0,
+      5.772,
+      -9
+     ],
+     "r": 0.30479999999999996,
+     "h": 9.144,
+     "axis": "y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      14.0,
+      10.344,
+      -9
+     ],
+     "r": 0.30479999999999996,
+     "k": 0.5,
+     "axis": "+y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      14.0,
+      1.2,
+      -9
+     ],
+     "r": 0.30479999999999996,
+     "k": 0.5,
+     "axis": "-y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      14.0,
+      0.5238,
+      -9
+     ],
+     "r": 0.27431999999999995,
+     "h": 1.0476,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      14.0,
+      0.1,
+      -9
+     ],
+     "r": 0.38099999999999995,
+     "h": 0.2,
+     "axis": "y",
+     "c": "#b9b4aa"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      14.9,
+      6.2292000000000005,
+      -9
+     ],
+     "r": 0.11,
+     "h": 2.6,
+     "axis": "y",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "box",
+     "p": [
+      14.0,
+      10.943999999999999,
+      -9
+     ],
+     "s": [
+      0.9,
+      0.08,
+      0.9
+     ],
+     "c": "#e0b52e"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      13.45,
+      5.4719999999999995,
+      -9
+     ],
+     "r": 0.025,
+     "h": 10.344,
+     "axis": "y",
+     "c": "#e0b52e"
+    }
+   ],
+   "focus": [
+    14.0,
+    5.0,
+    -9
+   ],
+   "planos": [
+    "absorbedor"
+   ]
+  },
+  {
+   "tag": "TC-202",
+   "name": "Torre contactora de glicol 2",
+   "system": "deshidratacion",
+   "info": {
+    "Función": "El gas sube y el glicol (TEG) baja por los platos; el glicol atrapa el agua del gas.",
+    "Tipo": "De platos",
+    "Capacidad": "12 MMSCFD (Alex) · 15 MMSCFD @1200 psig (P&ID)",
+    "Estado": "EN SERVICIO (el gas pasa por la torre 2)",
+    "Dimensiones": "Ø 24 in × 300 in entre costuras (plano Valerus)",
+    "Clase": "ANSI 600#",
+    "Operación": "Las dos torres están en paralelo; se puede pasar el gas por una sola (Alex).",
+    "Plano": "EDS-PR-PL-2505-003-1/2",
+    "Fabricante": "Valerus · absorbedor/scrubber · 8 platos de burbujeo",
+    "Diseño": "1440 psig @ 120 °F · prueba hidrostática 1872 psig",
+    "Peso": "7.715 lb vacía · 12.013 lb llena de agua",
+    "TAG mantenimiento": "PS9-TC202"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      18.5,
+      5.772,
+      -9
+     ],
+     "r": 0.30479999999999996,
+     "h": 9.144,
+     "axis": "y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      18.5,
+      10.344,
+      -9
+     ],
+     "r": 0.30479999999999996,
+     "k": 0.5,
+     "axis": "+y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      18.5,
+      1.2,
+      -9
+     ],
+     "r": 0.30479999999999996,
+     "k": 0.5,
+     "axis": "-y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      18.5,
+      0.5238,
+      -9
+     ],
+     "r": 0.27431999999999995,
+     "h": 1.0476,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      18.5,
+      0.1,
+      -9
+     ],
+     "r": 0.38099999999999995,
+     "h": 0.2,
+     "axis": "y",
+     "c": "#b9b4aa"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      19.4,
+      6.2292000000000005,
+      -9
+     ],
+     "r": 0.11,
+     "h": 2.6,
+     "axis": "y",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "box",
+     "p": [
+      18.5,
+      10.943999999999999,
+      -9
+     ],
+     "s": [
+      0.9,
+      0.08,
+      0.9
+     ],
+     "c": "#e0b52e"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      17.95,
+      5.4719999999999995,
+      -9
+     ],
+     "r": 0.025,
+     "h": 10.344,
+     "axis": "y",
+     "c": "#e0b52e"
+    }
+   ],
+   "focus": [
+    18.5,
+    5.0,
+    -9
+   ],
+   "planos": [
+    "absorbedor"
+   ]
+  },
+  {
+   "tag": "GRU-210",
+   "name": "Unidad regeneradora de glicol",
+   "system": "deshidratacion",
+   "info": {
+    "Función": "Calienta el glicol rico para evaporar el agua y devolverlo pobre (seco) a las torres.",
+    "Componentes": "Flash tank V-230 · columna de destilación · rehervidor H-220 · intercambiador E-210 · filtro · bombas Kimray P-211/212",
+    "Datos P&ID": "30 MBTU/H · bombas Kimray 21015 PV · 3000#",
+    "Manual": "25 MMSCFD @ 1200 psig · TIC 350–375 °F",
+    "Dimensiones": "Patín ≈ 6,6 × 2,4 m (planos Valerus, aprox.)",
+    "Plano": "EDS-PR-PL-2505-003-2/2",
+    "Fabricante": "Valerus · regenerador 300M con separador de gas de bombas",
+    "Equipos del patín": "Rehervidor BBC-1100 · separador MBD-1300 (24\" × 48\") · scrubber de gas combustible MBF-1200 · bombas de glicol PBA-1200 A/B (Kimray) · intercambiador de placas",
+    "Alturas": "Columna de destilación 13'-2\" (4,0 m) · chimenea 10'-11\" (3,3 m)",
+    "TAG mantenimiento": "PS9-GRU210"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      16.2,
+      0.15,
+      -17.0
+     ],
+     "s": [
+      8.5,
+      0.3,
+      3.0
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      16.599999999999998,
+      1.2,
+      -17.0
+     ],
+     "r": 0.55,
+     "h": 4.2,
+     "axis": "x",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "box",
+     "p": [
+      13.799999999999999,
+      1.2,
+      -17.0
+     ],
+     "s": [
+      0.9,
+      1.1,
+      1.0
+     ],
+     "c": "#b8443a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      13.799999999999999,
+      3.2,
+      -17.0
+     ],
+     "r": 0.15,
+     "h": 3.0,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      17.8,
+      2.9,
+      -17.0
+     ],
+     "r": 0.18,
+     "h": 2.2,
+     "axis": "y",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      16.8,
+      2.35,
+      -16.1
+     ],
+     "r": 0.32,
+     "h": 2.4,
+     "axis": "x",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "box",
+     "p": [
+      19.5,
+      0.9,
+      -16.1
+     ],
+     "s": [
+      1.1,
+      1.2,
+      0.8
+     ],
+     "c": "#3d6fa8"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      19.5,
+      0.9,
+      -17.9
+     ],
+     "r": 0.18,
+     "h": 1.2,
+     "axis": "y",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "box",
+     "p": [
+      18.4,
+      0.55,
+      -18.1
+     ],
+     "s": [
+      0.7,
+      0.5,
+      0.35
+     ],
+     "c": "#e0b52e"
+    },
+    {
+     "t": "box",
+     "p": [
+      18.4,
+      0.55,
+      -17.6
+     ],
+     "s": [
+      0.7,
+      0.5,
+      0.35
+     ],
+     "c": "#e0b52e"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      12.6,
+      2.0,
+      -18.45
+     ],
+     "r": 0.03,
+     "h": 3.4,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      14.5,
+      2.0,
+      -18.45
+     ],
+     "r": 0.03,
+     "h": 3.4,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      16.4,
+      2.0,
+      -18.45
+     ],
+     "r": 0.03,
+     "h": 3.4,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      18.299999999999997,
+      2.0,
+      -18.45
+     ],
+     "r": 0.03,
+     "h": 3.4,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      20.2,
+      2.0,
+      -18.45
+     ],
+     "r": 0.03,
+     "h": 3.4,
+     "axis": "y",
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    16.4,
+    1.6,
+    -17.3
+   ],
+   "planos": [
+    "gru_iso",
+    "gru_elev",
+    "gru_pid"
+   ]
+  },
+  {
+   "tag": "FT-SECO",
+   "name": "Medición de gas seco",
+   "system": "deshidratacion",
+   "info": {
+    "Función": "Mide el gas deshidratado antes del dew point.",
+    "Equipo": "Daniel + Scanner 2000 (Alex) · AGA-3 4\" ANSI 600 (manual)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      24,
+      1.0,
+      -5
+     ],
+     "r": 0.1016,
+     "h": 3.5,
+     "axis": "x",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "box",
+     "p": [
+      24,
+      1.45,
+      -5
+     ],
+     "s": [
+      0.35,
+      0.35,
+      0.45
+     ],
+     "c": "#e0b52e"
+    }
+   ],
+   "focus": [
+    24,
+    1,
+    -5
+   ]
+  },
+  {
+   "tag": "SK-300",
+   "name": "Patín de procesamiento 12 MMSCFD",
+   "system": "dewpoint",
+   "parts": [],
+   "focus": [
+    32,
+    1.2,
+    -9.5
+   ],
+   "planos": [
+    "patin_iso",
+    "patin_vistas"
+   ],
+   "info": {
+    "Función": "Estructura que lleva juntos los equipos del control de dew point: E-301, E-302, separador frío V-310, bulk drum TK-1000 y las bombas del chiller.",
+    "Plano": "Arreglo skid equipos de procesamiento de 12 MMSCFD / 300 BPD (Construmont S.A.S. para Ecopetrol-PBI, 2020)",
+    "Condiciones": "Operación 300 psi · diseño 500 psi · prueba 1440 psi",
+    "Dimensiones": "≈ 7,2 × 2,3 m — según el arreglo (aprox.)"
+   }
+  },
+  {
+   "tag": "E-301",
+   "name": "Intercambiador gas-gas",
+   "system": "dewpoint",
+   "info": {
+    "Función": "Pre-enfría el gas seco que entra con el gas frío que sale del separador frío.",
+    "Operación": "El gas seco entra por los tubos; el gas frío regresa por el otro lado (Alex).",
+    "Plano": "Intercambiador de calor gas-gas 12\"/20 ft · ANSI 600 (Construmont/PBI)",
+    "Construcción": "Tubo 12\" SCH 80 · cabezales y bridas clase 600",
+    "Capacidad": "12 MMSCFD",
+    "TAG mantenimiento": "PS9-E301 (intercambiador gas/gas E1)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      31,
+      1.6,
+      -8
+     ],
+     "r": 0.15239999999999998,
+     "h": 6.7056000000000004,
+     "axis": "x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      34.3528,
+      1.6,
+      -8
+     ],
+     "r": 0.15239999999999998,
+     "k": 0.5,
+     "axis": "+x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      27.647199999999998,
+      1.6,
+      -8
+     ],
+     "r": 0.15239999999999998,
+     "k": 0.5,
+     "axis": "-x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "box",
+     "p": [
+      28.98832,
+      0.7542800000000001,
+      -8
+     ],
+     "s": [
+      0.25,
+      1.5085600000000001,
+      0.27431999999999995
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      33.01168,
+      0.7542800000000001,
+      -8
+     ],
+     "s": [
+      0.25,
+      1.5085600000000001,
+      0.27431999999999995
+     ],
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    32,
+    2.45,
+    -8.75
+   ],
+   "planos": [
+    "e301"
+   ]
+  },
+  {
+   "tag": "E-302",
+   "name": "Intercambiador gas-agua",
+   "system": "dewpoint",
+   "info": {
+    "Función": "Enfría el gas con agua-monoetilenglicol fría para que condensen los hidrocarburos pesados.",
+    "Operación": "Gas por los tubos; agua-MEG fría por la carcasa (Alex). Hasta −5 °C en el gas (manual).",
+    "Plano": "Intercambiador de calor gas-agua 12\"/20 ft · cabezales ANSI 600 · cuerpo ANSI 150",
+    "Conexiones": "Arriba: entrada de gas y salida de agua al tanque · abajo: salida de gas frío y entrada de agua fría del chiller",
+    "Capacidad": "12 MMSCFD",
+    "TAG mantenimiento": "PS9-E302 (intercambiador gas/agua E2)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      31,
+      1.6,
+      -11
+     ],
+     "r": 0.15239999999999998,
+     "h": 6.7056000000000004,
+     "axis": "x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      34.3528,
+      1.6,
+      -11
+     ],
+     "r": 0.15239999999999998,
+     "k": 0.5,
+     "axis": "+x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      27.647199999999998,
+      1.6,
+      -11
+     ],
+     "r": 0.15239999999999998,
+     "k": 0.5,
+     "axis": "-x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "box",
+     "p": [
+      28.98832,
+      0.7542800000000001,
+      -11
+     ],
+     "s": [
+      0.25,
+      1.5085600000000001,
+      0.27431999999999995
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      33.01168,
+      0.7542800000000001,
+      -11
+     ],
+     "s": [
+      0.25,
+      1.5085600000000001,
+      0.27431999999999995
+     ],
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    32,
+    2.45,
+    -10.25
+   ],
+   "planos": [
+    "e302"
+   ]
+  },
+  {
+   "tag": "V-310",
+   "name": "Separador frío trifásico",
+   "system": "dewpoint",
+   "info": {
+    "Función": "Recoge los líquidos que se condensan al enfriar el gas.",
+    "Tipo": "Trifásico horizontal (plano Construmont)",
+    "Dimensiones": "Ø 30 in × 8 ft · ANSI 600",
+    "Capacidad": "12 MMSCFD / 300 BPD",
+    "Salidas": "Gas seco · condensados · aguas aceitosas · líquidos regulados · alivio a tea",
+    "TAG mantenimiento": "PS9-V310 (separador frío líquidos)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      41,
+      1.3,
+      -9.5
+     ],
+     "r": 0.381,
+     "h": 2.4384,
+     "axis": "x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      42.2192,
+      1.3,
+      -9.5
+     ],
+     "r": 0.381,
+     "k": 0.5,
+     "axis": "+x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      39.7808,
+      1.3,
+      -9.5
+     ],
+     "r": 0.381,
+     "k": 0.5,
+     "axis": "-x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "box",
+     "p": [
+      40.26848,
+      0.5357000000000001,
+      -9.5
+     ],
+     "s": [
+      0.25,
+      1.0714000000000001,
+      0.6858000000000001
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      41.73152,
+      0.5357000000000001,
+      -9.5
+     ],
+     "s": [
+      0.25,
+      1.0714000000000001,
+      0.6858000000000001
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      41.6,
+      0.6,
+      -9.5
+     ],
+     "r": 0.15,
+     "h": 0.6,
+     "axis": "y",
+     "c": "#3f8f5a"
+    }
+   ],
+   "focus": [
+    31.5,
+    1.0,
+    -9.5
+   ],
+   "planos": [
+    "v310"
+   ]
+  },
+  {
+   "tag": "TK-1000",
+   "name": "Bulk drum de agua-MEG",
+   "system": "dewpoint",
+   "parts": [],
+   "focus": [
+    34.5,
+    0.8,
+    -9.5
+   ],
+   "planos": [
+    "patin_iso"
+   ],
+   "info": {
+    "Función": "Pulmón del circuito del chiller: recibe el agua-monoetilenglicol que sale del E-302 y alimenta las bombas.",
+    "Plano": "Arreglo del patín de procesamiento (Construmont/PBI)"
+   }
+  },
+  {
+   "tag": "UE-101",
+   "name": "Unidad de enfriamiento (chiller)",
+   "system": "dewpoint",
+   "info": {
+    "Función": "Enfría el agua-monoetilenglicol que circula por la carcasa del E-302.",
+    "Marca": "York · 120 toneladas de refrigeración (Alex)",
+    "Datos": "Compresores scroll · 2 circuitos · 460 V · 306,6 A (manual)",
+    "Dimensiones": "≈ 2,6 × 2,2 × 3,0 m · 4 ventiladores (según el arreglo, aprox.)",
+    "TAG mantenimiento": "PS9-UE101 (chiller York 101)"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      33,
+      1.3,
+      -18.5
+     ],
+     "s": [
+      7.0,
+      2.4,
+      2.3
+     ],
+     "c": "#d9dde0"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      30.6,
+      2.55,
+      -18.5
+     ],
+     "r": 0.6,
+     "h": 0.12,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      32.2,
+      2.55,
+      -18.5
+     ],
+     "r": 0.6,
+     "h": 0.12,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      33.800000000000004,
+      2.55,
+      -18.5
+     ],
+     "r": 0.6,
+     "h": 0.12,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      35.400000000000006,
+      2.55,
+      -18.5
+     ],
+     "r": 0.6,
+     "h": 0.12,
+     "axis": "y",
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    38.3,
+    1.2,
+    -9.5
+   ],
+   "planos": [
+    "patin_iso"
+   ]
+  },
+  {
+   "tag": "P-301/302",
+   "name": "Bombas de agua-MEG",
+   "system": "dewpoint",
+   "info": {
+    "Función": "Recirculan el agua-monoetilenglicol entre el chiller y el E-302 (una opera, otra de respaldo).",
+    "Datos": "3500 rpm · 9,25 A · 440 V (manual)",
+    "Caudal": "Por confirmar (Alex dio 40–50 gal, verificar si es por minuto)",
+    "TAG mantenimiento": "PS9-P301 / PS9-P302 (bombas agua-mono)"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      38.5,
+      0.45,
+      -15.5
+     ],
+     "s": [
+      1.2,
+      0.6,
+      0.5
+     ],
+     "c": "#3d6fa8"
+    },
+    {
+     "t": "box",
+     "p": [
+      38.5,
+      0.45,
+      -16.5
+     ],
+     "s": [
+      1.2,
+      0.6,
+      0.5
+     ],
+     "c": "#3d6fa8"
+    },
+    {
+     "t": "box",
+     "p": [
+      38.5,
+      0.1,
+      -16
+     ],
+     "s": [
+      1.8,
+      0.2,
+      1.8
+     ],
+     "c": "#b9b4aa"
+    }
+   ],
+   "focus": [
+    35.25,
+    0.5,
+    -9.5
+   ]
+  },
+  {
+   "tag": "PCV-400",
+   "name": "Válvula back pressure y alivio de succión",
+   "system": "compresion",
+   "info": {
+    "Función": "Baja la presión del gas tratado de 420–450 a 380 psig (succión del compresor) y alivia a tea si la succión pasa de 380 psig.",
+    "Válvulas": "Back pressure VEX-101/102/103 (manual) · estación PCV-400 4\"-600# (P&ID)",
+    "Plano": "EDS-PR-PL-2505-005-1/1",
+    "TAG mantenimiento": "Válvulas de expansión PS9-VEX101 / PS9-VEX102"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      47,
+      3.3000000000000003,
+      -3
+     ],
+     "s": [
+      1.6,
+      0.4,
+      0.8
+     ],
+     "c": "#d9822b"
+    },
+    {
+     "t": "box",
+     "p": [
+      47,
+      3.75,
+      -3
+     ],
+     "s": [
+      0.3,
+      0.6,
+      0.3
+     ],
+     "c": "#d9822b"
+    }
+   ],
+   "focus": [
+    47,
+    3.5,
+    -3
+   ]
+  },
+  {
+   "tag": "FT-COMB + PCV",
+   "name": "Regulación y medición de gas combustible",
+   "system": "combustible",
+   "info": {
+    "Función": "Regula el gas de 420 a 150 psig y lo mide antes del scrubber de combustible.",
+    "Medición": "Daniel + Scanner 2000 · AGA-3 3\" ANSI 150",
+    "TAG mantenimiento": "PS9-FTIQ102 (medidor gas combustible)",
+    "Válvula": "Expansión de combustible PS9-VEX102"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      50,
+      1.2,
+      -6.5
+     ],
+     "s": [
+      0.6,
+      0.6,
+      0.6
+     ],
+     "c": "#d9822b"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      51.5,
+      1.0,
+      -6.5
+     ],
+     "r": 0.07619999999999999,
+     "h": 2.4,
+     "axis": "x",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "box",
+     "p": [
+      51.5,
+      1.4,
+      -6.5
+     ],
+     "s": [
+      0.3,
+      0.3,
+      0.4
+     ],
+     "c": "#e0b52e"
+    }
+   ],
+   "focus": [
+    51,
+    1,
+    -6.5
+   ]
+  },
+  {
+   "tag": "V-601",
+   "name": "Scrubber de gas combustible",
+   "system": "combustible",
+   "info": {
+    "Función": "Acumula y limpia el gas combustible para el compresor, el generador a gas y el rehervidor.",
+    "Tipo": "Vertical",
+    "Dimensiones": "Ø 24 in × 14 ft (P&ID)",
+    "Clase": "ANSI 150#",
+    "Operación": "150 psig · PSV-601 set 150 psig",
+    "Plano": "EDS-PR-PL-2505-007-1/1",
+    "TAG mantenimiento": "PS9-V103 (scrubber pulmón gas combustible)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      54.5,
+      2.7336,
+      -7
+     ],
+     "r": 0.30479999999999996,
+     "h": 4.2672,
+     "axis": "y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      54.5,
+      4.8671999999999995,
+      -7
+     ],
+     "r": 0.30479999999999996,
+     "k": 0.5,
+     "axis": "+y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      54.5,
+      0.6,
+      -7
+     ],
+     "r": 0.30479999999999996,
+     "k": 0.5,
+     "axis": "-y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      54.5,
+      0.2238,
+      -7
+     ],
+     "r": 0.27431999999999995,
+     "h": 0.4476,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      54.5,
+      0.1,
+      -7
+     ],
+     "r": 0.38099999999999995,
+     "h": 0.2,
+     "axis": "y",
+     "c": "#b9b4aa"
+    }
+   ],
+   "focus": [
+    54.5,
+    2.8,
+    -7
+   ]
+  },
+  {
+   "tag": "C-401",
+   "name": "Motocompresor de gas",
+   "system": "compresion",
+   "info": {
+    "Función": "Sube la presión del gas de 380 psig (succión) a 1100–1500 psig para el gasoducto.",
+    "Equipo": "Compresor Ariel JGE/4 (reciprocante 2 etapas) + motor Caterpillar G3516 (16 cil. en V, máx. 1400 rpm)",
+    "Capacidad": "10 MMSCFD (P&ID) · clase 600#/1500#",
+    "Etapas": "1ª 300→700 psi · aeroenfriador · 2ª 700→1500 psi (manual)",
+    "Dimensiones": "Patín ≈ 12 × 3,8 m — ESTIMADO",
+    "Plano": "EDS-PR-PL-2505-005-1/1",
+    "Motor": "Caterpillar G3516 · PS9-MT401",
+    "TAG mantenimiento": "PS9-C401 · motor PS9-MT401 · tren de succión PS9-TR101 · by-pass PS9-TR102",
+    "Horómetro": "Unidad compresora UC-401: se anota en el cierre del día del reporte"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      61.0,
+      0.2,
+      -11.0
+     ],
+     "s": [
+      12.0,
+      0.4,
+      3.8
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      58.2,
+      1.5,
+      -11.0
+     ],
+     "s": [
+      4.6,
+      2.0,
+      1.6
+     ],
+     "c": "#e0b52e"
+    },
+    {
+     "t": "box",
+     "p": [
+      61.4,
+      1.0,
+      -11.0
+     ],
+     "s": [
+      1.6,
+      1.2,
+      2.8
+     ],
+     "c": "#7b8691"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      61.4,
+      1.0,
+      -12.9
+     ],
+     "r": 0.35,
+     "h": 0.9,
+     "axis": "z",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      61.4,
+      1.0,
+      -9.1
+     ],
+     "r": 0.35,
+     "h": 0.9,
+     "axis": "z",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      62.4,
+      1.0,
+      -12.9
+     ],
+     "r": 0.3,
+     "h": 0.9,
+     "axis": "z",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      62.4,
+      1.0,
+      -9.1
+     ],
+     "r": 0.3,
+     "h": 0.9,
+     "axis": "z",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      61.9,
+      2.1,
+      -12.5
+     ],
+     "r": 0.3,
+     "h": 2.0,
+     "axis": "x",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      61.9,
+      2.1,
+      -9.5
+     ],
+     "r": 0.3,
+     "h": 2.0,
+     "axis": "x",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "box",
+     "p": [
+      65.4,
+      2.0,
+      -11.0
+     ],
+     "s": [
+      3.0,
+      3.6,
+      3.4
+     ],
+     "c": "#7b8691"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      65.4,
+      3.85,
+      -11.0
+     ],
+     "r": 1.3,
+     "h": 0.1,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      63.6,
+      1.9,
+      -12.3
+     ],
+     "r": 0.35,
+     "h": 2.6,
+     "axis": "y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      63.6,
+      1.9,
+      -9.7
+     ],
+     "r": 0.3,
+     "h": 2.6,
+     "axis": "y",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      57.5,
+      3.2,
+      -10.4
+     ],
+     "r": 0.18,
+     "h": 1.6,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      56.4,
+      3.6,
+      -12.4
+     ],
+     "r": 0.35,
+     "h": 0.9,
+     "axis": "y",
+     "c": "#d9dde0"
+    }
+   ],
+   "focus": [
+    61.0,
+    2,
+    -11.0
+   ]
+  },
+  {
+   "tag": "V-801",
+   "name": "Pulmón de aire de arranque",
+   "system": "compresion",
+   "info": {
+    "Función": "Guarda aire para el motor de arranque del motocompresor.",
+    "Equipo": "V-801 en el P&ID (el manual lo llama V-104)",
+    "Dimensiones": "ESTIMADAS",
+    "TAG mantenimiento": "PS9-V104 (scrubber de aire compresor)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      56.5,
+      1.2,
+      -15
+     ],
+     "r": 0.3,
+     "h": 1.8,
+     "axis": "y",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "ell",
+     "p": [
+      56.5,
+      2.1,
+      -15
+     ],
+     "r": 0.3,
+     "k": 0.5,
+     "axis": "+y",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "ell",
+     "p": [
+      56.5,
+      0.3,
+      -15
+     ],
+     "r": 0.3,
+     "k": 0.5,
+     "axis": "-y",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      56.5,
+      0.075,
+      -15
+     ],
+     "r": 0.27,
+     "h": 0.15,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      56.5,
+      0.1,
+      -15
+     ],
+     "r": 0.375,
+     "h": 0.2,
+     "axis": "y",
+     "c": "#b9b4aa"
+    }
+   ],
+   "focus": [
+    56.5,
+    1.2,
+    -15
+   ]
+  },
+  {
+   "tag": "CONDUMAX",
+   "name": "Analizador de calidad Condumax II",
+   "system": "compresion",
+   "info": {
+    "Función": "Mide el punto de rocío de hidrocarburos y de agua del gas de venta.",
+    "Equipo": "Michell Condumax II"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      68,
+      1.2,
+      -6
+     ],
+     "s": [
+      1.5,
+      2.4,
+      1.2
+     ],
+     "c": "#d9dde0"
+    },
+    {
+     "t": "box",
+     "p": [
+      68,
+      2.5,
+      -6
+     ],
+     "s": [
+      1.8,
+      0.1,
+      1.5
+     ],
+     "c": "#7b8691"
+    }
+   ],
+   "focus": [
+    68,
+    1.2,
+    -6
+   ]
+  },
+  {
+   "tag": "FT-VENTA",
+   "name": "Medición de gas de venta",
+   "system": "compresion",
+   "info": {
+    "Función": "Mide el gas comprimido que se entrega al gasoducto Tren A / Tren B → Promigas."
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      70,
+      1.0,
+      -9
+     ],
+     "r": 0.15239999999999998,
+     "h": 4.0,
+     "axis": "x",
+     "c": "#9aa5ad"
+    },
+    {
+     "t": "box",
+     "p": [
+      70,
+      1.5,
+      -9
+     ],
+     "s": [
+      0.35,
+      0.35,
+      0.45
+     ],
+     "c": "#e0b52e"
+    }
+   ],
+   "focus": [
+    70,
+    1,
+    -9
+   ]
+  },
+  {
+   "tag": "G-101",
+   "name": "Generador Waukesha H24 (a gas)",
+   "system": "servicios",
+   "info": {
+    "Función": "Generador principal 24/7 con gas de la planta.",
+    "Equipo": "Waukesha H24 · a gas · 1800 rpm",
+    "Capacidad": "250–350 kW nominal (Alex) · carga real 80–100 kW",
+    "Dimensiones": "Contenedor ≈ 6 × 2,4 × 2,6 m — ESTIMADO",
+    "TAG mantenimiento": "PS9-G101",
+    "Operación": "Normalmente trabaja uno de los dos generadores y el otro queda en stand by (Alex)"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      20,
+      1.3,
+      10
+     ],
+     "s": [
+      6.0,
+      2.6,
+      2.4
+     ],
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      18,
+      3.2,
+      10
+     ],
+     "r": 0.15,
+     "h": 1.4,
+     "axis": "y",
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    20,
+    1.3,
+    10
+   ]
+  },
+  {
+   "tag": "G-102",
+   "name": "Generador Perkins 2506 (diésel)",
+   "system": "servicios",
+   "info": {
+    "Función": "Generador de respaldo.",
+    "Equipo": "Perkins 2506 · diésel · 6 cil. en línea · 1800 rpm",
+    "Capacidad": "250–350 kW nominal (Alex)",
+    "Dimensiones": "≈ 4 × 1,6 × 2 m — ESTIMADO",
+    "TAG mantenimiento": "PS9-G102",
+    "Operación": "Respaldo: queda en stand by mientras trabaja el Waukesha (Alex)"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      28,
+      1.0,
+      10
+     ],
+     "s": [
+      4.0,
+      2.0,
+      1.6
+     ],
+     "c": "#e0b52e"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      26.6,
+      2.5,
+      10
+     ],
+     "r": 0.12,
+     "h": 1.0,
+     "axis": "y",
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    28,
+    1,
+    10
+   ]
+  },
+  {
+   "tag": "CCM-101",
+   "name": "Centro de control de motores",
+   "system": "servicios",
+   "info": {
+    "Función": "Tablero eléctrico donde se hace la transferencia entre generadores y se distribuye la energía.",
+    "TAG mantenimiento": "PS9-CCM101 (contenedor CCM planta)"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      12,
+      1.3,
+      13
+     ],
+     "s": [
+      12.0,
+      2.6,
+      2.4
+     ],
+     "c": "#d9dde0"
+    }
+   ],
+   "focus": [
+    12,
+    1.3,
+    13
+   ]
+  },
+  {
+   "tag": "C-403",
+   "name": "Compresor de aire de instrumentos",
+   "system": "servicios",
+   "info": {
+    "Función": "Aire limpio y seco para instrumentos, válvulas de control y arranque neumático (uno opera, otro respaldo).",
+    "Presión": "100–140 psi (Alex) · 150 psig (manual)",
+    "Equipo": "Ingersoll Rand C1 · R11i-A190 TAS · 1480 rpm · 460 V",
+    "TAG mantenimiento": "PS9-C403"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      40.0,
+      0.75,
+      10
+     ],
+     "s": [
+      1.6,
+      1.3,
+      1.0
+     ],
+     "c": "#3d6fa8"
+    }
+   ],
+   "focus": [
+    40.0,
+    0.8,
+    10
+   ]
+  },
+  {
+   "tag": "C-404",
+   "name": "Compresor de aire de instrumentos",
+   "system": "servicios",
+   "info": {
+    "Función": "Aire limpio y seco para instrumentos, válvulas de control y arranque neumático (uno opera, otro respaldo).",
+    "Presión": "100–140 psi (Alex) · 150 psig (manual)",
+    "Equipo": "Ingersoll Rand C2 · R11i-A190 TAS · 1480 rpm · 460 V",
+    "TAG mantenimiento": "PS9-C404"
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      42.5,
+      0.75,
+      10
+     ],
+     "s": [
+      1.6,
+      1.3,
+      1.0
+     ],
+     "c": "#3d6fa8"
+    }
+   ],
+   "focus": [
+    42.5,
+    0.8,
+    10
+   ]
+  },
+  {
+   "tag": "V-105",
+   "name": "Pulmón de aire",
+   "system": "servicios",
+   "info": {
+    "Función": "Acumula el aire comprimido para los instrumentos.",
+    "TAG mantenimiento": "PS9-V105 (scrubber salida aire compresor)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      45.5,
+      1.3,
+      10
+     ],
+     "r": 0.35,
+     "h": 2.0,
+     "axis": "y",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "ell",
+     "p": [
+      45.5,
+      2.3,
+      10
+     ],
+     "r": 0.35,
+     "k": 0.5,
+     "axis": "+y",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "ell",
+     "p": [
+      45.5,
+      0.3,
+      10
+     ],
+     "r": 0.35,
+     "k": 0.5,
+     "axis": "-y",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      45.5,
+      0.0625,
+      10
+     ],
+     "r": 0.315,
+     "h": 0.125,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      45.5,
+      0.1,
+      10
+     ],
+     "r": 0.4375,
+     "h": 0.2,
+     "axis": "y",
+     "c": "#b9b4aa"
+    }
+   ],
+   "focus": [
+    45.5,
+    1.3,
+    10
+   ]
+  },
+  {
+   "tag": "CQSN-101",
+   "name": "Contenedor de químicos",
+   "system": "servicios",
+   "info": {
+    "Función": "Acopio seguro de glicol, aceites y químicos con contención de derrames."
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      5,
+      1.3,
+      13
+     ],
+     "s": [
+      6.0,
+      2.6,
+      2.4
+     ],
+     "c": "#d9822b"
+    }
+   ],
+   "focus": [
+    -0.5,
+    1.3,
+    13
+   ]
+  },
+  {
+   "tag": "TK-101",
+   "name": "Tanque de condensados",
+   "system": "alivio",
+   "info": {
+    "Función": "Recibe los líquidos de V-101, V-310, V-601 y compresor; se despacha en carrotanque.",
+    "Capacidad": "3.800 gal · horizontal atmosférico (manual)",
+    "Dimensiones": "Ø 2,4 m × 2,4 m entre costuras: con los cabezales da ≈ 14,5 m³ ≈ 3.800 gal — ESTIMADAS a partir de la capacidad",
+    "TAG mantenimiento": "PS9-TK101 (tanque de líquidos)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      52,
+      1.6,
+      12
+     ],
+     "r": 1.2,
+     "h": 3.2,
+     "axis": "x",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "ell",
+     "p": [
+      53.6,
+      1.6,
+      12
+     ],
+     "r": 1.2,
+     "k": 0.5,
+     "axis": "+x",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "ell",
+     "p": [
+      50.4,
+      1.6,
+      12
+     ],
+     "r": 1.2,
+     "k": 0.5,
+     "axis": "-x",
+     "c": "#d9dde0"
+    },
+    {
+     "t": "box",
+     "p": [
+      51.04,
+      0.44000000000000006,
+      12
+     ],
+     "s": [
+      0.25,
+      0.8800000000000001,
+      2.16
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      52.96,
+      0.44000000000000006,
+      12
+     ],
+     "s": [
+      0.25,
+      0.8800000000000001,
+      2.16
+     ],
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    52,
+    1.6,
+    12
+   ]
+  },
+  {
+   "tag": "V-501",
+   "name": "KO-Drum de tea",
+   "system": "alivio",
+   "info": {
+    "Función": "Separa líquidos del gas de alivio antes de la tea.",
+    "Dimensiones": "ESTIMADAS",
+    "TAG mantenimiento": "PS9-V501 (KOP-drum de tea)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      66,
+      1.0,
+      16
+     ],
+     "r": 0.6,
+     "h": 3.0,
+     "axis": "x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      67.5,
+      1.0,
+      16
+     ],
+     "r": 0.6,
+     "k": 0.5,
+     "axis": "+x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "ell",
+     "p": [
+      64.5,
+      1.0,
+      16
+     ],
+     "r": 0.6,
+     "k": 0.5,
+     "axis": "-x",
+     "c": "#3f8f5a"
+    },
+    {
+     "t": "box",
+     "p": [
+      65.1,
+      0.32,
+      16
+     ],
+     "s": [
+      0.25,
+      0.64,
+      1.08
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      66.9,
+      0.32,
+      16
+     ],
+     "s": [
+      0.25,
+      0.64,
+      1.08
+     ],
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    66,
+    1,
+    16
+   ]
+  },
+  {
+   "tag": "F-901",
+   "name": "Tea",
+   "system": "alivio",
+   "info": {
+    "Función": "Quema de forma segura el gas de alivio, arranques, paradas y emergencias.",
+    "Dimensiones": "Altura ≈ 15 m — ESTIMADA",
+    "TAG mantenimiento": "PS9-F901 (tea sistema de quema)"
+   },
+   "parts": [
+    {
+     "t": "cyl",
+     "p": [
+      72,
+      7.5,
+      22
+     ],
+     "r": 0.2,
+     "h": 15,
+     "axis": "y",
+     "c": "#7b8691"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      72,
+      15.2,
+      22
+     ],
+     "r": 0.32,
+     "h": 0.5,
+     "axis": "y",
+     "c": "#4a525a"
+    },
+    {
+     "t": "cyl",
+     "p": [
+      72,
+      0.25,
+      22
+     ],
+     "r": 1.0,
+     "h": 0.5,
+     "axis": "y",
+     "c": "#b9b4aa"
+    }
+   ],
+   "focus": [
+    72,
+    7,
+    22
+   ]
+  },
+  {
+   "tag": "RACK",
+   "name": "Rack de tuberías",
+   "system": "entrada",
+   "info": {
+    "Función": "Estructura que soporta las tuberías entre equipos (disposición aproximada)."
+   },
+   "parts": [
+    {
+     "t": "box",
+     "p": [
+      2,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      2,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      2,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      2,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      8,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      8,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      8,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      8,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      14,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      14,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      14,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      14,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      20,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      20,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      20,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      20,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      26,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      26,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      26,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      26,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      32,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      32,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      32,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      32,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      38,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      38,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      38,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      38,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      44,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      44,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      44,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      44,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      50,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      50,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      50,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      50,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      56,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      56,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      56,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      56,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      62,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      62,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      62,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      62,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      68,
+      2.1,
+      -4.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      68,
+      2.1,
+      -1.0
+     ],
+     "s": [
+      0.2,
+      5.4,
+      0.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      68,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      68,
+      4.75,
+      -2.5
+     ],
+     "s": [
+      0.2,
+      0.15,
+      3.2
+     ],
+     "c": "#4a525a"
+    },
+    {
+     "t": "box",
+     "p": [
+      35,
+      3.95,
+      -2.5
+     ],
+     "s": [
+      66,
+      0.12,
+      0.12
+     ],
+     "c": "#4a525a"
+    }
+   ],
+   "focus": [
+    35,
+    4,
+    -2.5
+   ]
+  },
+  {
+   "tag": "FTIQ-103",
+   "name": "Medición de gas de tea",
+   "system": "alivio",
+   "parts": [],
+   "focus": [
+    69.2,
+    2.0,
+    22
+   ],
+   "info": {
+    "Función": "Mide el gas que se manda a quemar en la tea.",
+    "TAG mantenimiento": "PS9-FTIQ103",
+    "Ubicación": "Aproximada: sobre la línea del KO-drum a la tea"
+   }
+  },
+  {
+   "tag": "OF-101",
+   "name": "Contenedor de oficinas",
+   "system": "servicios",
+   "parts": [],
+   "focus": [
+    4.5,
+    1.3,
+    19.5
+   ],
+   "info": {
+    "Función": "Oficina de operación de la planta.",
+    "TAG mantenimiento": "PS9-OF101",
+    "Ubicación": "Aproximada"
+   }
+  },
+  {
+   "tag": "SDT-1",
+   "name": "Contenedor de bodega oil-shut",
+   "system": "servicios",
+   "parts": [],
+   "focus": [
+    12.5,
+    1.3,
+    19.5
+   ],
+   "info": {
+    "Función": "Bodega de repuestos, aceites y herramientas.",
+    "TAG mantenimiento": "PS9-SDT1",
+    "Ubicación": "Aproximada"
+   }
+  }
+ ],
+ "pipes": [
+  {
+   "stream": "humedo",
+   "pts": [
+    [
+     -3,
+     1.0,
+     -6
+    ],
+    [
+     3.2,
+     1.0,
+     -6
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Gas de pozos 6\""
+  },
+  {
+   "stream": "humedo",
+   "pts": [
+    [
+     4,
+     4.4,
+     -6
+    ],
+    [
+     4,
+     5.0,
+     -6
+    ],
+    [
+     6.5,
+     5.0,
+     -6
+    ],
+    [
+     6.5,
+     1.0,
+     -6
+    ],
+    [
+     10.5,
+     1.0,
+     -6
+    ],
+    [
+     11.5,
+     1.0,
+     -6
+    ],
+    [
+     11.5,
+     4.2,
+     -6
+    ],
+    [
+     11.5,
+     4.2,
+     -3
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Gas húmedo 6\""
+  },
+  {
+   "stream": "humedo",
+   "pts": [
+    [
+     12.8,
+     4.2,
+     -3
+    ],
+    [
+     12.8,
+     4.2,
+     -9
+    ],
+    [
+     12.8,
+     1.8,
+     -9
+    ],
+    [
+     13.69,
+     1.8,
+     -9
+    ]
+   ],
+   "d": 0.1016,
+   "label": "Gas húmedo a TC-201 4\""
+  },
+  {
+   "stream": "seco",
+   "pts": [
+    [
+     14.0,
+     8.95,
+     -9
+    ],
+    [
+     14.0,
+     9.35,
+     -9
+    ],
+    [
+     14.0,
+     9.35,
+     -4
+    ],
+    [
+     14.0,
+     4.8,
+     -4
+    ],
+    [
+     14.0,
+     4.8,
+     -2.5
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Gas seco de TC-201 6\""
+  },
+  {
+   "stream": "teg_pobre",
+   "pts": [
+    [
+     16.2,
+     0.75,
+     -16.25
+    ],
+    [
+     16.2,
+     1.6,
+     -16.25
+    ],
+    [
+     16.2,
+     1.6,
+     -12
+    ],
+    [
+     14.9,
+     1.6,
+     -12
+    ],
+    [
+     14.9,
+     8.2,
+     -12
+    ],
+    [
+     14.9,
+     8.2,
+     -9
+    ],
+    [
+     14.45,
+     8.2,
+     -9
+    ]
+   ],
+   "d": 0.0254,
+   "label": "TEG pobre a la torre"
+  },
+  {
+   "stream": "teg_rico",
+   "pts": [
+    [
+     14.45,
+     2.6,
+     -9
+    ],
+    [
+     14.75,
+     2.6,
+     -9
+    ],
+    [
+     14.75,
+     0.6,
+     -9
+    ],
+    [
+     14.75,
+     0.6,
+     -13.5
+    ],
+    [
+     15.5,
+     0.6,
+     -13.5
+    ],
+    [
+     15.5,
+     0.6,
+     -16.25
+    ],
+    [
+     15.5,
+     0.75,
+     -16.25
+    ]
+   ],
+   "d": 0.0508,
+   "label": "TEG rico a regenerar"
+  },
+  {
+   "stream": "humedo",
+   "pts": [
+    [
+     17.3,
+     4.2,
+     -3
+    ],
+    [
+     17.3,
+     4.2,
+     -9
+    ],
+    [
+     17.3,
+     1.8,
+     -9
+    ],
+    [
+     18.19,
+     1.8,
+     -9
+    ]
+   ],
+   "d": 0.1016,
+   "label": "Gas húmedo a TC-202 4\""
+  },
+  {
+   "stream": "seco",
+   "pts": [
+    [
+     18.5,
+     8.95,
+     -9
+    ],
+    [
+     18.5,
+     9.35,
+     -9
+    ],
+    [
+     18.5,
+     9.35,
+     -4
+    ],
+    [
+     18.5,
+     4.8,
+     -4
+    ],
+    [
+     18.5,
+     4.8,
+     -2.5
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Gas seco de TC-202 6\""
+  },
+  {
+   "stream": "teg_pobre",
+   "pts": [
+    [
+     16.2,
+     0.75,
+     -16.25
+    ],
+    [
+     16.2,
+     1.6,
+     -16.25
+    ],
+    [
+     16.2,
+     1.6,
+     -12
+    ],
+    [
+     19.4,
+     1.6,
+     -12
+    ],
+    [
+     19.4,
+     8.2,
+     -12
+    ],
+    [
+     19.4,
+     8.2,
+     -9
+    ],
+    [
+     18.95,
+     8.2,
+     -9
+    ]
+   ],
+   "d": 0.0254,
+   "label": "TEG pobre a la torre"
+  },
+  {
+   "stream": "teg_rico",
+   "pts": [
+    [
+     18.95,
+     2.6,
+     -9
+    ],
+    [
+     19.25,
+     2.6,
+     -9
+    ],
+    [
+     19.25,
+     0.6,
+     -9
+    ],
+    [
+     19.25,
+     0.6,
+     -13.5
+    ],
+    [
+     15.5,
+     0.6,
+     -13.5
+    ]
+   ],
+   "d": 0.0508,
+   "label": "TEG rico a regenerar"
+  },
+  {
+   "stream": "humedo",
+   "pts": [
+    [
+     11.5,
+     4.2,
+     -3
+    ],
+    [
+     20,
+     4.2,
+     -3
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Cabezal gas húmedo"
+  },
+  {
+   "stream": "seco",
+   "pts": [
+    [
+     14,
+     4.8,
+     -2.5
+    ],
+    [
+     23,
+     4.8,
+     -2.5
+    ],
+    [
+     23,
+     1.0,
+     -2.5
+    ],
+    [
+     23,
+     1.0,
+     -5
+    ],
+    [
+     22.2,
+     1.0,
+     -5
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Gas seco al medidor"
+  },
+  {
+   "stream": "seco",
+   "pts": [
+    [
+     25.8,
+     1.0,
+     -5
+    ],
+    [
+     27.4,
+     1.0,
+     -5
+    ],
+    [
+     27.4,
+     3.25,
+     -5
+    ],
+    [
+     27.4,
+     3.25,
+     -8.75
+    ],
+    [
+     29.25,
+     3.25,
+     -8.75
+    ],
+    [
+     29.25,
+     2.82,
+     -8.75
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Gas seco a E-301 (tubos)"
+  },
+  {
+   "stream": "seco",
+   "pts": [
+    [
+     30.0,
+     2.82,
+     -8.75
+    ],
+    [
+     30.0,
+     3.45,
+     -8.75
+    ],
+    [
+     30.0,
+     3.45,
+     -9.5
+    ],
+    [
+     34.75,
+     3.45,
+     -9.5
+    ],
+    [
+     34.75,
+     3.45,
+     -10.25
+    ],
+    [
+     34.75,
+     2.82,
+     -10.25
+    ]
+   ],
+   "d": 0.1016,
+   "label": "E-301 → E-302"
+  },
+  {
+   "stream": "frio",
+   "pts": [
+    [
+     29.25,
+     2.08,
+     -10.25
+    ],
+    [
+     29.25,
+     1.75,
+     -10.25
+    ],
+    [
+     29.25,
+     1.75,
+     -9.5
+    ],
+    [
+     30.6,
+     1.75,
+     -9.5
+    ],
+    [
+     30.6,
+     1.42,
+     -9.5
+    ]
+   ],
+   "d": 0.1016,
+   "label": "Gas enfriado al V-310"
+  },
+  {
+   "stream": "frio",
+   "pts": [
+    [
+     32.4,
+     1.42,
+     -9.5
+    ],
+    [
+     32.4,
+     1.85,
+     -9.5
+    ],
+    [
+     32.4,
+     1.85,
+     -8.75
+    ],
+    [
+     33.9,
+     1.85,
+     -8.75
+    ],
+    [
+     33.9,
+     2.08,
+     -8.75
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Gas frío regresa por E-301"
+  },
+  {
+   "stream": "frio",
+   "pts": [
+    [
+     34.75,
+     2.08,
+     -8.75
+    ],
+    [
+     34.75,
+     1.75,
+     -8.75
+    ],
+    [
+     34.75,
+     1.75,
+     -7.7
+    ],
+    [
+     36.3,
+     1.75,
+     -7.7
+    ],
+    [
+     36.3,
+     4.2,
+     -7.7
+    ],
+    [
+     36.3,
+     4.2,
+     -3
+    ],
+    [
+     46,
+     4.2,
+     -3
+    ]
+   ],
+   "d": 0.2032,
+   "label": "Gas tratado frío 8\""
+  },
+  {
+   "stream": "agua",
+   "pts": [
+    [
+     34.2,
+     2.82,
+     -10.25
+    ],
+    [
+     34.2,
+     3.1,
+     -10.25
+    ],
+    [
+     34.2,
+     3.1,
+     -9.5
+    ],
+    [
+     34.2,
+     1.32,
+     -9.5
+    ]
+   ],
+   "d": 0.0762,
+   "label": "Agua-MEG"
+  },
+  {
+   "stream": "agua",
+   "pts": [
+    [
+     34.9,
+     0.5,
+     -9.5
+    ],
+    [
+     37.0,
+     0.5,
+     -9.5
+    ]
+   ],
+   "d": 0.0762,
+   "label": "Agua-MEG a chiller"
+  },
+  {
+   "stream": "agua",
+   "pts": [
+    [
+     37.0,
+     1.3,
+     -10.4
+    ],
+    [
+     36.4,
+     1.3,
+     -10.4
+    ],
+    [
+     36.4,
+     1.3,
+     -11.05
+    ],
+    [
+     29.9,
+     1.3,
+     -11.05
+    ],
+    [
+     29.9,
+     1.3,
+     -10.25
+    ],
+    [
+     29.9,
+     2.08,
+     -10.25
+    ]
+   ],
+   "d": 0.0762,
+   "label": "Agua-MEG fría al E-302"
+  },
+  {
+   "stream": "frio",
+   "pts": [
+    [
+     46,
+     4.2,
+     -3
+    ],
+    [
+     46,
+     1.0,
+     -3
+    ],
+    [
+     48.5,
+     1.0,
+     -3
+    ],
+    [
+     48.5,
+     4.2,
+     -3
+    ]
+   ],
+   "d": 0.2032,
+   "label": "A la válvula back pressure"
+  },
+  {
+   "stream": "frio",
+   "pts": [
+    [
+     45.3,
+     4.2,
+     -3
+    ],
+    [
+     45.3,
+     4.2,
+     -4.5
+    ],
+    [
+     49.5,
+     4.2,
+     -4.5
+    ],
+    [
+     49.5,
+     1.0,
+     -4.5
+    ],
+    [
+     49.5,
+     1.0,
+     -6.5
+    ]
+   ],
+   "d": 0.0762,
+   "label": "Toma de gas combustible"
+  },
+  {
+   "stream": "comb",
+   "pts": [
+    [
+     52.7,
+     1.0,
+     -6.5
+    ],
+    [
+     53.9,
+     1.0,
+     -6.5
+    ],
+    [
+     53.9,
+     1.0,
+     -7
+    ]
+   ],
+   "d": 0.0762,
+   "label": "Gas combustible 150 psig"
+  },
+  {
+   "stream": "comb",
+   "pts": [
+    [
+     54.5,
+     5.5,
+     -7
+    ],
+    [
+     54.5,
+     5.1,
+     -7
+    ],
+    [
+     54.5,
+     5.1,
+     -1.5
+    ],
+    [
+     16,
+     5.1,
+     -1.5
+    ],
+    [
+     16,
+     5.1,
+     -14
+    ],
+    [
+     12.6,
+     5.1,
+     -14
+    ],
+    [
+     12.6,
+     1.7,
+     -14
+    ],
+    [
+     12.6,
+     1.7,
+     -16.9
+    ]
+   ],
+   "d": 0.0508,
+   "label": "Gas combustible a GRU-210"
+  },
+  {
+   "stream": "comb",
+   "pts": [
+    [
+     24,
+     5.1,
+     -1.5
+    ],
+    [
+     24,
+     5.1,
+     8.3
+    ],
+    [
+     22,
+     5.1,
+     8.3
+    ],
+    [
+     22,
+     1.4,
+     8.3
+    ],
+    [
+     22,
+     1.4,
+     8.75
+    ]
+   ],
+   "d": 0.0508,
+   "label": "Gas combustible a G-101"
+  },
+  {
+   "stream": "comb",
+   "pts": [
+    [
+     54.5,
+     5.1,
+     -7
+    ],
+    [
+     58,
+     5.1,
+     -7
+    ],
+    [
+     58,
+     2.2,
+     -7
+    ],
+    [
+     58,
+     2.2,
+     -9.45
+    ]
+   ],
+   "d": 0.0508,
+   "label": "Gas combustible al motor C-401"
+  },
+  {
+   "stream": "frio",
+   "pts": [
+    [
+     48.5,
+     4.2,
+     -3
+    ],
+    [
+     64,
+     4.2,
+     -3
+    ],
+    [
+     64,
+     2.6,
+     -3
+    ],
+    [
+     64,
+     2.6,
+     -9.9
+    ],
+    [
+     64.45,
+     2.6,
+     -9.9
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Succión 380 psig 6\""
+  },
+  {
+   "stream": "tea",
+   "pts": [
+    [
+     48.75,
+     2.6,
+     -3
+    ],
+    [
+     49.25,
+     2.6,
+     -3
+    ],
+    [
+     49.25,
+     4.0,
+     -3
+    ],
+    [
+     49.25,
+     4.0,
+     2.5
+    ],
+    [
+     66,
+     4.0,
+     2.5
+    ]
+   ],
+   "d": 0.1016,
+   "label": "Alivio de succión a tea (>380 psig)"
+  },
+  {
+   "stream": "venta",
+   "pts": [
+    [
+     66.25,
+     1.6,
+     -11.6
+    ],
+    [
+     67,
+     1.6,
+     -11.6
+    ],
+    [
+     67,
+     1.0,
+     -11.6
+    ],
+    [
+     67,
+     1.0,
+     -9
+    ],
+    [
+     68,
+     1.0,
+     -9
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Descarga 1100–1500 psig"
+  },
+  {
+   "stream": "venta",
+   "pts": [
+    [
+     72,
+     1.0,
+     -9
+    ],
+    [
+     76,
+     1.0,
+     -9
+    ],
+    [
+     76,
+     0.4,
+     -9
+    ],
+    [
+     80,
+     0.4,
+     -9
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Al gasoducto Tren A / Tren B"
+  },
+  {
+   "stream": "venta",
+   "pts": [
+    [
+     68.5,
+     1.0,
+     -9
+    ],
+    [
+     68.5,
+     1.0,
+     -6.6
+    ]
+   ],
+   "d": 0.0127,
+   "label": "Muestra al Condumax"
+  },
+  {
+   "stream": "aire",
+   "pts": [
+    [
+     41,
+     1.0,
+     10
+    ],
+    [
+     45.1,
+     1.0,
+     10
+    ]
+   ],
+   "d": 0.0254,
+   "label": "Aire 100–140 psi"
+  },
+  {
+   "stream": "aire",
+   "pts": [
+    [
+     45.5,
+     2.6,
+     10
+    ],
+    [
+     45.5,
+     3.8,
+     10
+    ],
+    [
+     45.5,
+     3.8,
+     0
+    ],
+    [
+     53.6,
+     3.8,
+     0
+    ],
+    [
+     53.6,
+     3.8,
+     -15
+    ],
+    [
+     56.5,
+     3.8,
+     -15
+    ],
+    [
+     56.5,
+     2.45,
+     -15
+    ]
+   ],
+   "d": 0.0254,
+   "label": "Aire a instrumentos y V-801"
+  },
+  {
+   "stream": "tea",
+   "pts": [
+    [
+     66,
+     4.0,
+     2.5
+    ],
+    [
+     66,
+     4.0,
+     13.6
+    ],
+    [
+     65.0,
+     4.0,
+     13.6
+    ],
+    [
+     65.0,
+     4.0,
+     16
+    ],
+    [
+     65.0,
+     1.75,
+     16
+    ]
+   ],
+   "d": 0.1524,
+   "label": "Cabezal de alivio 6\""
+  },
+  {
+   "stream": "tea",
+   "pts": [
+    [
+     67.0,
+     1.75,
+     16
+    ],
+    [
+     67.0,
+     2.0,
+     16
+    ],
+    [
+     67.0,
+     2.0,
+     22
+    ],
+    [
+     71.8,
+     2.0,
+     22
+    ]
+   ],
+   "d": 0.1524,
+   "label": "A la tea"
+  },
+  {
+   "stream": "cond",
+   "pts": [
+    [
+     4,
+     0.55,
+     -6
+    ],
+    [
+     4,
+     0.35,
+     -6
+    ],
+    [
+     4,
+     0.35,
+     7
+    ],
+    [
+     52,
+     0.35,
+     7
+    ],
+    [
+     52,
+     0.35,
+     10.6
+    ]
+   ],
+   "d": 0.0508,
+   "label": "Condensados V-101"
+  },
+  {
+   "stream": "cond",
+   "pts": [
+    [
+     31.9,
+     0.62,
+     -9.5
+    ],
+    [
+     31.9,
+     0.35,
+     -9.5
+    ],
+    [
+     31.9,
+     0.35,
+     7
+    ]
+   ],
+   "d": 0.0508,
+   "label": "Condensados V-310"
+  },
+  {
+   "stream": "cond",
+   "pts": [
+    [
+     54.5,
+     0.4,
+     -7
+    ],
+    [
+     54.5,
+     0.3,
+     -7
+    ],
+    [
+     54.5,
+     0.3,
+     7
+    ]
+   ],
+   "d": 0.0508,
+   "label": "Drenaje V-601"
+  },
+  {
+   "stream": "cond",
+   "pts": [
+    [
+     61,
+     0.3,
+     -9
+    ],
+    [
+     61,
+     0.3,
+     7
+    ],
+    [
+     52,
+     0.3,
+     7
+    ]
+   ],
+   "d": 0.0762,
+   "label": "Drenajes compresor"
+  }
+ ]
+}
