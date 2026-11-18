@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#eef2f5" />
+<title>SINÚ 9 · Simulador de proceso</title>
+<meta name="description" content="Simulación de la planta de gas SINÚ 9 en 3D: datos de entrada, proceso explicado y verificación del gas de venta contra el RUT." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6e78'/%3E%3Cpath d='M9 23V12l7-4 7 4v11' fill='none' stroke='white' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M13 23v-6h6v6' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="./assets/index-BYeBySBw.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-TE9ugl90.css">
+</head>
+<body>
+<canvas id="c" tabindex="0" aria-label="Planta SINÚ 9 en 3D"></canvas>
+
+<div id="cargando"><div class="carga-caja"><div class="carga-logo"></div><b>Armando la planta SINÚ 9</b><span>Equipos, tuberías y simulación…</span><i class="carga-barra"><i></i></i></div></div>
+
+<header class="barra" id="barra">
+  <div class="marca">
+    <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 20V9l7-4 7 4v11"/><path d="M9 20v-6h6v6"/></svg></span>
+    <div class="marca-txt"><b><span class="sin-movil">Planta </span>SINÚ 9</b><small>Simulador de proceso · Tren B</small></div>
+  </div>
+  <div class="herr">
+    <div class="seg" id="modoColor" role="group" aria-label="Color de las tuberías">
+      <button type="button" data-m="proceso" class="on">Proceso</button>
+      <button type="button" data-m="temperatura"><span class="sin-movil">Temperatura</span><span class="solo-movil">Temp.</span></button>
+    </div>
+    <button type="button" class="ib on" id="bValores" title="Valores sobre la planta" aria-pressed="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="3"/><path d="M12 17v3M8 11h8"/></svg><span>Valores</span></button>
+    <button type="button" class="ib on" id="bFlujo" title="Flujo animado" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M3 8h13M12 4l4 4-4 4M21 16H8M12 12l-4 4 4 4"/></svg><span>Flujo</span></button>
+    <button type="button" class="ib" id="bInicio" title="Vista general"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6M6 10v9h12v-9"/></svg><span>Vista general</span></button>
+    <button type="button" class="ib solo" id="bAyuda" title="Cómo se usa" aria-label="Cómo se usa"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.3 2.4c-.5.2-.8.6-.8 1.1v.5M12 17h.01"/></svg></button>
+  </div>
+</header>
+
+<aside class="panel" id="pEntradas" aria-label="Datos de entrada">
+  <div class="p-cab">
+    <div><h2>Datos de entrada</h2><p>Cambie un valor y la planta se recalcula.</p></div>
+    <button type="button" class="txt" id="bRestablecer" title="Volver a la operación normal">Restablecer</button>
+  </div>
+  <div class="escenarios" id="escenarios" aria-label="Escenarios"></div>
+  <div class="p-cuerpo" id="secciones"></div>
+</aside>
+
+<aside class="panel" id="pResultado" aria-label="Resultado">
+  <div id="veredicto" class="veredicto"></div>
+  <div class="kpis" id="kpis"></div>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" class="on" data-t="rut">Calidad RUT</button>
+    <button type="button" role="tab" data-t="corrientes">Corrientes</button>
+    <button type="button" role="tab" data-t="avisos">Avisos <em id="nAvisos"></em></button>
+  </div>
+  <div class="p-cuerpo">
+    <div class="tab-c on" data-t="rut" id="tRut"></div>
+    <div class="tab-c" data-t="corrientes" id="tCorrientes"></div>
+    <div class="tab-c" data-t="avisos" id="tAvisos"></div>
+  </div>
+</aside>
+
+<div id="etiquetas" aria-hidden="true"></div>
+<div id="leyendaT" hidden><span>Temperatura</span><i></i><small><b>20 °F</b><b>85 °F</b><b>230 °F</b></small></div>
+
+<section id="proceso" aria-label="El proceso paso a paso">
+  <div id="tarjeta" class="tarjeta" hidden></div>
+  <nav class="ruta" id="ruta"></nav>
+</section>
+
+<nav id="tabsMovil" aria-label="Paneles">
+  <button type="button" data-v="resultado" class="on"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Resultado</button>
+  <button type="button" data-v="entradas"><svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>Entradas</button>
+  <button type="button" data-v="proceso"><svg viewBox="0 0 24 24"><path d="M4 12h3l2-5 4 10 2-5h5"/></svg>Proceso</button>
+</nav>
+
+<div id="calculando" hidden><i></i>Calculando</div>
+
+<div id="guia" hidden>
+  <div class="guia-caja" role="dialog" aria-modal="true" aria-labelledby="guiaT">
+    <h3 id="guiaT">Así se usa el simulador</h3>
+    <ol>
+      <li><span><b>Cambie los datos de entrada.</b> Caudal, presión, temperatura, glicol, chiller, compresores… La planta se recalcula sola.</span></li>
+      <li><span><b>Mire la planta.</b> Los equipos con problema se pintan de ámbar o rojo y sobre cada uno aparece su valor clave. Toque cualquier equipo para ver su ficha.</span></li>
+      <li><span><b>Siga el proceso abajo.</b> Cada etapa explica qué le pasa al gas, con los números de la simulación, y qué mover si algo no cumple.</span></li>
+      <li><span><b>Revise el resultado.</b> El gas de venta se compara con las 11 especificaciones del RUT.</span></li>
+    </ol>
+    <p class="guia-nota">Hidrocarburos con Peng-Robinson (motor del Simulador de Procesos, validado). Agua y glicol con correlaciones del GPSA. La composición del gas es estimada: cámbiela por la cromatografía real.</p>
+    <button type="button" class="prim" id="guiaOk">Empezar</button>
+  </div>
+</div>
+
+<div id="visor" hidden><div class="visor-cab"><b></b><button type="button" class="txt">Cerrar</button></div><div class="visor-img"><img alt="Plano del equipo" /></div></div>
+
+<script src="./vendor/three.min.js"></script>
+<script src="./vendor/OrbitControls.js"></script>
+</body>
+</html>
