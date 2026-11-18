@@ -2,6 +2,10 @@
 
 Plataforma para simular la planta de gas SINÚ 9 (Tren B) en 3D. Se ingresan los datos de entrada (caudal, presión, temperatura, composición, glicol, chiller, compresores), la planta se recalcula y muestra en el modelo 3D el estado de cada equipo, el valor clave encima de cada uno y una explicación de cada etapa. El gas de venta se compara con las 11 especificaciones del RUT.
 
+Ver en línea: https://jhonsaavedrau-dev.github.io/planta-sinu9-simulador/
+
+**Publicar de nuevo:** `npm run build`, y subir el contenido de `dist/` a la rama `gh-pages` (el build necesita la carpeta hermana `../simulacion-procesos`, por eso no se arma en GitHub).
+
 ```
 npm install
 npm run dev      # http://localhost:4830
